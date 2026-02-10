@@ -1,0 +1,36 @@
+%% Lab6 Equilibrium solution of non-linear dynamical system
+clear all
+close all
+clc
+
+m = 1;
+k0 = 0.5;
+k1=0.25;
+b=0.75;
+
+syms x1
+eqz = -k0*x1-k1*x1^3 + 3 == 0;
+% Solve the equilibrium equation for x1
+equilibriumPoints = solve(eqz, x1);
+
+
+%Study the stability porperties
+A = [0 1;-2.5 -0.75];
+% Evaluate the stability by calculating the eigenvalues of the Jacobian matrix A
+eigenvalues = eig(A)
+
+%with b=0 the system becomes linear thus is stable
+
+%% Problem 2
+clear all
+close all
+clc
+
+m =0.1;
+l =0.5;
+beta = 0.1;
+g = 9.81;
+
+%Compute the equilibrium input that correspons to the equilibrium state
+%x=[2pi/3 0]'
+
